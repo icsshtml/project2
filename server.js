@@ -8,8 +8,8 @@ var express = require('express'),
     session = require('express-session');
 
 var PORT = process.env.PORT || 3000,
-  MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017',
-  dbname="jondb";
+  MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017';
+  // dbname="jondb";
 
 server.set('views', './views');
 server.set('view engine', 'ejs');
