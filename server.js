@@ -7,7 +7,11 @@ var express = require('express'),
     mongoose = require('mongoose'),
     session = require('express-session');
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000,
+  MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017',
+  dbname="jondb";
+
+  mongoose.connect(MONGOURI + "/" + dbname);
 
 server.set('views', './views');
 server.set('view engine', 'ejs');
@@ -52,15 +56,15 @@ var flightController = require('./controllers/flights.js');
 server.use('/flight', flightController);
 
 
-// server.get('/welcome', function(req, res){
-//   if(req.session.currentUser){
-//       res.render('welcome',{
-//       currentUser: req.session.currentUser
-//     });
-//   }else{
-//     res.redirect(302, '/users/login')
-//   }
-// });
+server.get('/welcome', function(req, res){
+  if(req.session.currentUser){
+      res.render('welcome',{
+      currentUser: req.session.currentUser
+    });
+  }else{
+    res.redirect(302, '/users/login')
+  }
+});
 
 server.get('/welcome', function (req, res) {
   res.render('welcome');
