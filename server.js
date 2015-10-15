@@ -11,8 +11,6 @@ var PORT = process.env.PORT || 3000,
   MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017',
   dbname="jondb";
 
-  mongoose.connect(MONGOURI + "/" + dbname);
-
 server.set('views', './views');
 server.set('view engine', 'ejs');
 server.use(morgan('dev'));
