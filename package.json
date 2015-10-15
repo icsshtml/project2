@@ -1,13 +1,13 @@
 {
-  "name": "w05d04",
+  "name": "Funke Project 2",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "server.js"
   },
-  "author": "",
+  "author": "Jon Li",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.1",
