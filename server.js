@@ -8,7 +8,7 @@ var express = require('express'),
     session = require('express-session');
 
 var PORT = process.env.PORT || 3000,
-  MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017';
+    MONGOURI= process.env.MONGOLAB_URI || 'mongodb://localhost:27017';
   // dbname="jondb";
 
 server.set('views', './views');
@@ -73,7 +73,7 @@ server.use(function (req, res, next){
   res.end();
 });
 
-mongoose.connect('mongodb://localhost:27017/flightTester');
+mongoose.connect(MONGOURI + "/flightTester");
 var db = mongoose.connection;
 
 db.on('error', function(){
