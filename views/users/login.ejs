@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to our site!</title>
+    	<link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class="head">Please log in to our site!</div>
+    <form action="/users/login" method="post">
+      <input type="text"
+             name="user[username]"
+             placeholder="username"><br /><br />
+      <input type="password"
+             name="user[password]"
+             placeholder="password"><br /><br />
+      <input type="submit" value="log in!">
+    </form>
+  </body>
+</html>

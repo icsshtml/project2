@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to our site!</title>
+    	<!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class ="head">Updating anything here</div><br />
+    <form action ="/flight/<%= Flight._id %>?_method=PATCH" method="post">
+      <input type="text"
+             name='Flight[author]'
+             value ="<%= Flight.author %>"><br />
+
+      <label>Title of post</label><br />
+      <input type="text"
+             name='Flight[title]'
+             value ="<%= Flight.title %>"><br />
+
+
+      <label>Your comment</label><br />
+      <textarea name='Flight[article]'
+                value="<%= Flight.article %>">
+              </textarea><br /><br />
+      <input type="submit" value="Post">
+    </form>
+  </body>
+</html>

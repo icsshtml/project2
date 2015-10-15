@@ -1,0 +1,54 @@
+<a href ="/flight/new">Add users here</a>
+
+<% Flight.forEach(function (Flight){ %>
+    <%= Flight.author %>  <%= Flight.title %>
+    <%= Flight.article %>
+
+      <!-- I add the comments from users who input -->
+    <!-- <p><%= Flight.comment %></p> -->
+
+  <!-- <h3>Add comment here  <%= Flight.comment %></h3>
+  <form action="flight" method="get">
+    <input type="text" name="Flight[comment]"
+           placeholder="add comments?">
+    <input type="submit" value="add it"><br />
+  </form> -->
+
+  <a href ="/flight/<%= Flight._id %>/edit">[ edit ]</a>
+    <form class="delete-button"
+  action ="/flight/<%= Flight._id %>?_method=DELETE"
+      method="post">
+      <input type="submit" value ="Delete">
+    </form> -->
+<!-- <% }) %> -->
+
+<!-- <div class ="posts">
+  <p>
+    <div class = "post-title">
+    <%= Flight.title %></br>
+      <h5>Posted by: <%= Flight.author %></h5>
+    </div>
+    <div class = "post-content">
+    <%= Flight.article %>
+  </div>
+​
+<h4 id = "commentheader">Comment!</h4>
+<form action="/Flight/<%= posts._id %>" method="post" class="comments">
+  <textarea class="form-control"
+            rows="3"
+            name="Flight[article][body]"
+            placeholder="comment"
+            id = "comment"></textarea>
+    <input type = "submit"
+           name="Flight[article]"
+           value="SUBMIT"
+           id = "comment-button">
+</form>
+<br/>
+<% Flight.article.forEach(function (article, i) { %>
+<div class = "post-comments">
+<%= article.body %><br/>
+Posted By: <%= article.author %><br/>
+​
+</div>
+<% }) %> -->

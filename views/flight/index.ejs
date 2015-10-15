@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to our site!</title>
+    	<!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="/flight.css"
+  </head>
+  <body>
+    <div class ="head">Forum here</div>
+    <br /><a href ="/flight/new">Add users here</a>
+    <br /><br />
+        <% Flight.forEach(function (Flight){ %>
+          <div class="form">
+          <%= Flight.author %> ---> <%= Flight.title %>
+          <%= Flight.article %>
+        </div>
+        <img src="http://wallblog.co.uk/files/2011/05/Screen-shot-2011-05-27-at-10.24.09.png">
+        <a href ="/flight/<%= Flight._id %>/edit">&nbsp;&nbsp;
+        <img src="http://b.dryicons.com/images/icon_sets/luna_blue_icons/png/128x128/edit.png">
+        </a>
+      <!-- users are able to add comemnt -->
+      <form action="flight" method="post">
+        <input type="text" name="Flight[article]"
+               placeholder="add comments?">
+        <input type="submit" value="add it">
+      </form>
+      <!-- <a href ="/flight/<%= Flight._id %>/edit">[ edit ]</a> -->
+        <form action ="/flight/<%= Flight._id %>?_method=DELETE"
+          method="post">
+          <input type="submit" value ="Delete"><br />
+        </form>
+    <% }) %>
+  </body>
+</html>
