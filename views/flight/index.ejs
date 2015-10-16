@@ -8,7 +8,8 @@
   </head>
   <body>
     <div class ="head">Forum here</div>
-    <br /><a href ="/flight/new">Add users here</a>
+    <br /><div class="add_user">
+      <a href ="/flight/new">Add users here</a></div>
     <br /><br />
         <% Flight.forEach(function (Flight){ %>
           <div class="form">
@@ -31,5 +32,9 @@
           <input type="submit" value ="Delete"><br />
         </form>
     <% }) %>
+    <div class="icon">
+    <a href="/users/new"><img src="http://beladomo.eu/images/logout_Icon.png">
+    </a>
+        </div>
   </body>
 </html>
